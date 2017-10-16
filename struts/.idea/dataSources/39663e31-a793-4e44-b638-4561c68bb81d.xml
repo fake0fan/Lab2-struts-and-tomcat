@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bookdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bookdb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="author"/>
+    <table id="8" parent="2" name="book"/>
+    <column id="9" parent="7" name="AuthorID">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="10" parent="7" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="11" parent="7" name="Age">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0</DataType>
+    </column>
+    <column id="12" parent="7" name="Country">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="13" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AuthorID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="14" parent="8" name="ISBN">
+      <Position>1</Position>
+      <DataType>varchar(13)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="15" parent="8" name="Title">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="16" parent="8" name="AuthorID">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0</DataType>
+    </column>
+    <column id="17" parent="8" name="Publisher">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="18" parent="8" name="PublishDate">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="19" parent="8" name="Price">
+      <Position>6</Position>
+      <DataType>double unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="20" parent="8" name="bookdb">
+      <ColNames>AuthorID</ColNames>
+    </index>
+    <key id="21" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ISBN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="22" parent="8" name="bookdb">
+      <ColNames>AuthorID</ColNames>
+      <RefSchemaName>bookdb</RefSchemaName>
+      <RefTableName>author</RefTableName>
+      <RefColNames>AuthorID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
